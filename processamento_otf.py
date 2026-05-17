@@ -31,9 +31,14 @@ def encontrar_pares(imagens_dir, mascs_dir):
 
 
 # 2. Função de processamento (sem alterações, calcula o NDVI na hora)
+
+# 2. Função de processamento (sem alterações, calcula o NDVI na hora)
 def proc_img_e_masc(img_path, mask_path, calc_ndvi=True, threshold_binario=5.0):
     with xr.open_dataset(img_path) as ds:
         img = ds.to_array().values.astype(np.float32)
+        
+        # --- CORREÇÃO CRÍTICA: Elimina NaNs e Infs vindos do arquivo NetCDF ---
+        img = np.nan_to_num(img, nan=0.0, posinf=1.0, neginf=0.0)
         
         if np.max(img) > 10.0:
             img = img / 10000.0
@@ -41,12 +46,16 @@ def proc_img_e_masc(img_path, mask_path, calc_ndvi=True, threshold_binario=5.0):
     if calc_ndvi and img.shape[0] >= 4:
         red = img[2, :, :]
         nir = img[3, :, :]
+        # O + 1e-8 evita divisão por zero, mas o nan_to_num garante estabilidade completa
         ndvi = (nir - red) / (nir + red + 1e-8)
+        ndvi = np.nan_to_num(ndvi, nan=0.0, posinf=1.0, neginf=-1.0)
         ndvi = np.expand_dims(ndvi, axis=0) 
         img = np.concatenate((img, ndvi), axis=0)
 
     with rasterio.open(mask_path) as src_mask:
         masc = src_mask.read(1).astype(np.float32)
+        # Sanitiza a máscara também por segurança
+        masc = np.nan_to_num(masc, nan=0.0)
 
     if threshold_binario is not None:
         masc = np.where(masc > threshold_binario, 0.0, 1.0)
@@ -54,8 +63,6 @@ def proc_img_e_masc(img_path, mask_path, calc_ndvi=True, threshold_binario=5.0):
     masc = np.expand_dims(masc, axis=0)
 
     return torch.from_numpy(img), torch.from_numpy(masc)
-
-
 
 # Modificamos o gerador para aceitar a lista 'pares' diretamente
 def gerador_em_tempo_real(pares, batch_size=8, embaralhar=True, calc_ndvi=True, threshold_binario=5.0):
