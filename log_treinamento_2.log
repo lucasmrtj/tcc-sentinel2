@@ -1,0 +1,104 @@
+nohup: ignoring input
+Passando os dados pela U-Net...
+
+--- Validação de Formatos ---
+Input vindo do gerador:  torch.Size([8, 7, 6, 256, 256])
+Output gerado pela rede: torch.Size([8, 1, 256, 256])
+Formato esperado da Máscara: torch.Size([8, 1, 256, 256])
+Total de imagens encontradas: 7830
+Quantidade para Treino (80%): 6264
+Quantidade para Teste  (20%): 1566
+Testando o gerador puramente funcional...
+Treinamento rodará no dispositivo: cuda
+Treino: 6264 | Teste: 1566 | Rodando em: cuda
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 1.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 1.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 0.00 metros
+Época [1/10] -> Perda Treino: 0.3346 | Perda Teste: 0.2540
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 1.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 1.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 0.00 metros
+Época [2/10] -> Perda Treino: 0.2088 | Perda Teste: 0.1767
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 1.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 1.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 0.00 metros
+Época [3/10] -> Perda Treino: 0.1419 | Perda Teste: 0.1202
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 1.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 1.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 0.00 metros
+Época [4/10] -> Perda Treino: 0.0984 | Perda Teste: 0.1144
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 1.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 1.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 0.00 metros
+Época [5/10] -> Perda Treino: 0.0696 | Perda Teste: 0.0615
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 1.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 1.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 0.00 metros
+Época [6/10] -> Perda Treino: 0.0512 | Perda Teste: 0.0596
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 1.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 1.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 0.00 metros
+Época [7/10] -> Perda Treino: 0.0389 | Perda Teste: 0.0347
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 1.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 1.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 0.00 metros
+Época [8/10] -> Perda Treino: 0.0303 | Perda Teste: 0.0268
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 1.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 1.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 0.00 metros
+Época [9/10] -> Perda Treino: 0.0240 | Perda Teste: 0.0220
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 1.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 1.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 0.00 metros
+Época [10/10] -> Perda Treino: 0.0191 | Perda Teste: 0.0175
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
