@@ -51,7 +51,9 @@ def proc_img_e_masc(img_path, mask_path, calc_ndvi=True, threshold_binario=5.0):
         ndvi = np.nan_to_num(ndvi, nan=0.0, posinf=1.0, neginf=-1.0)
         ndvi = np.expand_dims(ndvi, axis=0) 
         img = np.concatenate((img, ndvi), axis=0)
-
+    with rasterio.open(mask_path) as src_mask:
+        masc = src_mask.read(1).astype(np.float32)
+        masc = np.nan_to_num(masc, nan=0.0, posinf=0.0, neginf=0.0)
     masc = np.where(masc > 0, 1.0, 0.0)
         
     masc = np.expand_dims(masc, axis=0)
