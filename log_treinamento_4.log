@@ -1,0 +1,112 @@
+nohup: ignoring input
+Passando os dados pela U-Net...
+
+--- Validação de Formatos ---
+Input vindo do gerador:  torch.Size([8, 7, 6, 256, 256])
+Output gerado pela rede: torch.Size([8, 1, 256, 256])
+Formato esperado da Máscara: torch.Size([8, 1, 256, 256])
+Total de imagens encontradas: 7830
+Quantidade para Treino (80%): 6264
+Quantidade para Teste  (20%): 1566
+Testando o gerador puramente funcional...
+Treinamento rodará no dispositivo: cuda
+Treino: 6264 | Teste: 1566 | Rodando em: cuda
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 0.0001
+MCC (Pixel): -0.0000
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.1914
+Deslocamento do Centroide: 1756.55 metros
+Época [1/10] -> Perda Treino: 1.3612 | Perda Teste: 123.8750
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 0.0009
+MCC (Pixel): -0.0002
+Razão de Segmentos (NSR): 16326530.9976
+Precisão de Borda (Tolerância 20m): 0.2311
+Deslocamento do Centroide: 516.16 metros
+Época [2/10] -> Perda Treino: 1.0291 | Perda Teste: 43.3348
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 0.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [3/10] -> Perda Treino: 0.9613 | Perda Teste: 550.3141
+
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 0.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [4/10] -> Perda Treino: 0.9249 | Perda Teste: 466.1519
+
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 0.0000
+MCC (Pixel): -0.0000
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.1787
+Deslocamento do Centroide: 1760.07 metros
+Época [5/10] -> Perda Treino: 0.8976 | Perda Teste: 295.7213
+
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 0.5310
+MCC (Pixel): -0.0018
+Razão de Segmentos (NSR): 142857146.2155
+Precisão de Borda (Tolerância 20m): 0.2948
+Deslocamento do Centroide: 412.95 metros
+Época [6/10] -> Perda Treino: 0.8696 | Perda Teste: 2.6228
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 0.5537
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 409.89 metros
+Época [7/10] -> Perda Treino: 0.8453 | Perda Teste: 9.2523
+
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 0.5537
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 409.89 metros
+Época [8/10] -> Perda Treino: 0.8298 | Perda Teste: 92.3295
+
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 0.5527
+MCC (Pixel): -0.0010
+Razão de Segmentos (NSR): 8163265.4988
+Precisão de Borda (Tolerância 20m): 0.2731
+Deslocamento do Centroide: 410.33 metros
+Época [9/10] -> Perda Treino: 0.8282 | Perda Teste: 2.7306
+
+
+--- Relatório Científico Avançado (Capítulo 4) ---
+F1-Score (Pixel): 0.5537
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 409.89 metros
+Época [10/10] -> Perda Treino: 0.8283 | Perda Teste: 22.0419
+
+
