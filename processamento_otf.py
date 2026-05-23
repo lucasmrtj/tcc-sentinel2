@@ -3,6 +3,7 @@ import glob
 import rasterio
 import numpy as np
 import torch
+import torch.nn as nn
 import random
 import xarray as xr
 import json
@@ -135,14 +136,15 @@ print(f"Treinamento rodará no dispositivo: {device}")
 modelo = UNet(in_channels=42, out_channels=1).to(device)
 
 # Função de Perda (Binary Cross Entropy com Logits)
-funcao_perda = torch.nn.BCEWithLogitsLoss()
-
-# Otimizador Adam (taxa de aprendizado padrão de 1e-4 para segmentação é um bom início)
-otimizador = torch.optim.Adam(modelo.parameters(), lr=1e-4)
+pesos_positivos = torch.tensor([5.0]).to(device)
+funcao_perda = nn.BCEWithLogitsLoss(pos_weight=pesos_positivos)
 
 NUM_EPOCHS = 10
 BATCH_SIZE = 32
+LEARNING_RATE = 1e-4
 
+# Otimizador Adam (taxa de aprendizado padrão de 1e-4 para segmentação é um bom início)
+otimizador = torch.optim.AdamW(modelo.parameters(), lr=LEARNING_RATE, weight_decay=1e-2)
 # Dicionário para guardar as métricas que vão para os gráficos do TCC
 historico = {
     "loss_treino": [], 
