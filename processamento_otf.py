@@ -139,7 +139,7 @@ modelo = UNet(in_channels=42, out_channels=1).to(device)
 pesos_positivos = torch.tensor([5.0]).to(device)
 funcao_perda = nn.BCEWithLogitsLoss(pos_weight=pesos_positivos)
 
-NUM_EPOCHS = 10
+NUM_EPOCHS = 30
 BATCH_SIZE = 32
 LEARNING_RATE = 1e-4
 
@@ -247,10 +247,9 @@ for epoch in range(NUM_EPOCHS):
         historico["distorcao_forma_npi"].append(dist_forma)
         
         # --- NOVO: SALVA O HISTÓRICO EM ARQUIVO EM CADA ÉPOCA ---
-        with open("historico_treino_tcc.json", "w") as f:
+        with open("historico_treino_tcc_30.json", "w") as f:
             json.dump(historico, f, indent=4)
         # Tira a média aritmética de tudo para exibir no print da época
-        print(f"--- Relatório Científico Avançado (Capítulo 4) ---")
         print(f"F1-Score (Pixel): {historico['f1_pixel'][-1]:.4f}")
         print(f"MCC (Pixel): {historico['mcc_pixel'][-1]:.4f}")
         print(f"Razão de Segmentos (NSR): {np.mean(metricas_acumuladas['nsr_objeto']):.4f}")
@@ -263,7 +262,7 @@ for epoch in range(NUM_EPOCHS):
     # --- AJUSTE: Checkpoint inteligente para salvar o melhor modelo ---
     if perda_media_teste < melhor_loss_teste:
         melhor_loss_teste = perda_media_teste
-        torch.save(modelo.state_dict(), "melhor_model_tcc.pt")
+        torch.save(modelo.state_dict(), "melhor_model_tcc_30.pt")
         print("   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!\n")
     else:
         print("\n")
