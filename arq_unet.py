@@ -33,7 +33,12 @@ class UNet(nn.Module):
         self.down3 = nn.Sequential(nn.MaxPool2d(2), BlocoDuploConv(256, 512))
         
         # --- BOTTLENECK (Gargalo) ---
-        self.down4 = nn.Sequential(nn.MaxPool2d(2), BlocoDuploConv(512, 1024))
+        # Na classe UNet, altere apenas o self.down4:
+        self.down4 = nn.Sequential(
+            nn.MaxPool2d(2), 
+            BlocoDuploConv(512, 1024),
+            nn.Dropout2d(0.5) # <--- ADICIONE AQUI
+        )
 
         # --- DECODER (Caminho de Expansão + Skip Connections) ---
         self.up1 = nn.ConvTranspose2d(1024, 512, kernel_size=2, stride=2)
