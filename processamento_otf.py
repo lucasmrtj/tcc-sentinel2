@@ -147,7 +147,7 @@ LEARNING_RATE = 1e-4
 otimizador = torch.optim.AdamW(modelo.parameters(), lr=LEARNING_RATE, weight_decay=1e-2)
 
 # NOVO: Reduz o LR pela metade se a loss de teste não melhorar por 3 épocas seguidas
-scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(otimizador, mode='min', factor=0.5, patience=3, verbose=True)
+scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(otimizador, mode='min', factor=0.5, patience=3)
 # Dicionário para guardar as métricas que vão para os gráficos do TCC
 historico = {
     "loss_treino": [], 
@@ -233,7 +233,9 @@ for epoch in range(NUM_EPOCHS):
             
         perda_media_teste = perda_teste_total / lotes_teste if lotes_teste > 0 else 0
         scheduler.step(perda_media_teste)
-        
+        # Pega a taxa de aprendizagem atual do otimizador e imprime na tela
+        lr_atual = otimizador.param_groups[0]['lr']
+        print(f"   > Taxa de Aprendizagem Atual: {lr_atual:.6f}")
         # Guardando todos os dados calculados no histórico de épocas
         historico["loss_treino"].append(perda_media_treino)
         historico["loss_teste"].append(perda_media_teste)
