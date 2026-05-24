@@ -1,0 +1,258 @@
+nohup: ignoring input
+Passando os dados pela U-Net...
+
+--- Validação de Formatos ---
+Input vindo do gerador:  torch.Size([8, 7, 6, 256, 256])
+Output gerado pela rede: torch.Size([8, 1, 256, 256])
+Formato esperado da Máscara: torch.Size([8, 1, 256, 256])
+Total de imagens encontradas: 7830
+Quantidade para Treino (80%): 6264
+Quantidade para Teste  (20%): 1566
+Testando o gerador puramente funcional...
+Treinamento rodará no dispositivo: cuda
+Treino: 6264 | Teste: 1566 | Rodando em: cuda
+
+F1-Score (Pixel): 0.5537
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 409.89 metros
+Época [1/30] -> Perda Treino: 1.4367 | Perda Teste: 4.5880
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+F1-Score (Pixel): 0.3234
+MCC (Pixel): -0.0028
+Razão de Segmentos (NSR): 25951021020.7329
+Precisão de Borda (Tolerância 20m): 0.2915
+Deslocamento do Centroide: 450.79 metros
+Época [2/30] -> Perda Treino: 1.0179 | Perda Teste: 5.9490
+
+
+F1-Score (Pixel): 0.0122
+MCC (Pixel): -0.0017
+Razão de Segmentos (NSR): 32653061.9952
+Precisão de Borda (Tolerância 20m): 0.2427
+Deslocamento do Centroide: 1179.77 metros
+Época [3/30] -> Perda Treino: 0.9154 | Perda Teste: 23.4875
+
+
+F1-Score (Pixel): 0.0002
+MCC (Pixel): 0.0001
+Razão de Segmentos (NSR): 12244898.2482
+Precisão de Borda (Tolerância 20m): 0.1959
+Deslocamento do Centroide: 890.54 metros
+Época [4/30] -> Perda Treino: 0.8700 | Perda Teste: 51.8096
+
+
+F1-Score (Pixel): 0.0078
+MCC (Pixel): -0.0014
+Razão de Segmentos (NSR): 12244898.2482
+Precisão de Borda (Tolerância 20m): 0.2341
+Deslocamento do Centroide: 1218.58 metros
+Época [5/30] -> Perda Treino: 0.8591 | Perda Teste: 111.9694
+
+
+F1-Score (Pixel): 0.0576
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 16326530.9976
+Precisão de Borda (Tolerância 20m): 0.2748
+Deslocamento do Centroide: 625.19 metros
+Época [6/30] -> Perda Treino: 0.8281 | Perda Teste: 35.1416
+
+
+F1-Score (Pixel): 0.0486
+MCC (Pixel): -0.0004
+Razão de Segmentos (NSR): 332653069.0517
+Precisão de Borda (Tolerância 20m): 0.2712
+Deslocamento do Centroide: 451.75 metros
+Época [7/30] -> Perda Treino: 0.8201 | Perda Teste: 29.9696
+
+
+F1-Score (Pixel): 0.0829
+MCC (Pixel): -0.0009
+Razão de Segmentos (NSR): 216326535.6951
+Precisão de Borda (Tolerância 20m): 0.2768
+Deslocamento do Centroide: 456.79 metros
+Época [8/30] -> Perda Treino: 0.8066 | Perda Teste: 11.7280
+
+
+F1-Score (Pixel): 0.0276
+MCC (Pixel): -0.0008
+Razão de Segmentos (NSR): 522448991.9238
+Precisão de Borda (Tolerância 20m): 0.2478
+Deslocamento do Centroide: 550.42 metros
+Época [9/30] -> Perda Treino: 0.7873 | Perda Teste: 331.6048
+
+
+F1-Score (Pixel): 0.0557
+MCC (Pixel): -0.0014
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2564
+Deslocamento do Centroide: 549.46 metros
+Época [10/30] -> Perda Treino: 0.7821 | Perda Teste: 190.6818
+
+
+F1-Score (Pixel): 0.1090
+MCC (Pixel): -0.0009
+Razão de Segmentos (NSR): 51020409.3730
+Precisão de Borda (Tolerância 20m): 0.2911
+Deslocamento do Centroide: 527.19 metros
+Época [11/30] -> Perda Treino: 0.7905 | Perda Teste: 14.3420
+
+
+F1-Score (Pixel): 0.5537
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 409.89 metros
+Época [12/30] -> Perda Treino: 0.7658 | Perda Teste: 8.5996
+
+
+F1-Score (Pixel): 0.0829
+MCC (Pixel): -0.0004
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2800
+Deslocamento do Centroide: 422.78 metros
+Época [13/30] -> Perda Treino: 0.7686 | Perda Teste: 150.8942
+
+
+F1-Score (Pixel): 0.0675
+MCC (Pixel): -0.0013
+Razão de Segmentos (NSR): 457142867.9333
+Precisão de Borda (Tolerância 20m): 0.2722
+Deslocamento do Centroide: 579.68 metros
+Época [14/30] -> Perda Treino: 0.7537 | Perda Teste: 163.6463
+
+
+F1-Score (Pixel): 0.1543
+MCC (Pixel): -0.0034
+Razão de Segmentos (NSR): 16326530.9976
+Precisão de Borda (Tolerância 20m): 0.2895
+Deslocamento do Centroide: 867.01 metros
+Época [15/30] -> Perda Treino: 0.7733 | Perda Teste: 24.8972
+
+
+F1-Score (Pixel): 0.1817
+MCC (Pixel): -0.0024
+Razão de Segmentos (NSR): 12244898.2421
+Precisão de Borda (Tolerância 20m): 0.2902
+Deslocamento do Centroide: 703.68 metros
+Época [16/30] -> Perda Treino: 0.7697 | Perda Teste: 21.1827
+
+
+F1-Score (Pixel): 0.0528
+MCC (Pixel): -0.0009
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2566
+Deslocamento do Centroide: 520.90 metros
+Época [17/30] -> Perda Treino: 0.7647 | Perda Teste: 340.0349
+
+
+F1-Score (Pixel): 0.0683
+MCC (Pixel): -0.0010
+Razão de Segmentos (NSR): 236734699.4587
+Precisão de Borda (Tolerância 20m): 0.2687
+Deslocamento do Centroide: 632.68 metros
+Época [18/30] -> Perda Treino: 0.7567 | Perda Teste: 165.6509
+
+
+F1-Score (Pixel): 0.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [19/30] -> Perda Treino: 0.7407 | Perda Teste: 16.4535
+
+
+F1-Score (Pixel): 0.0819
+MCC (Pixel): -0.0013
+Razão de Segmentos (NSR): 220408168.4542
+Precisão de Borda (Tolerância 20m): 0.2780
+Deslocamento do Centroide: 522.62 metros
+Época [20/30] -> Perda Treino: 0.7342 | Perda Teste: 153.9749
+
+
+F1-Score (Pixel): 0.0449
+MCC (Pixel): -0.0013
+Razão de Segmentos (NSR): 8163265.4988
+Precisão de Borda (Tolerância 20m): 0.2784
+Deslocamento do Centroide: 926.59 metros
+Época [21/30] -> Perda Treino: 0.7300 | Perda Teste: 53.7902
+
+
+F1-Score (Pixel): 0.0401
+MCC (Pixel): -0.0015
+Razão de Segmentos (NSR): 40816327.5145
+Precisão de Borda (Tolerância 20m): 0.2716
+Deslocamento do Centroide: 966.99 metros
+Época [22/30] -> Perda Treino: 0.7244 | Perda Teste: 48.7913
+
+
+F1-Score (Pixel): 0.0716
+MCC (Pixel): -0.0006
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2699
+Deslocamento do Centroide: 507.86 metros
+Época [23/30] -> Perda Treino: 0.7230 | Perda Teste: 199.3362
+
+
+F1-Score (Pixel): 0.0825
+MCC (Pixel): -0.0004
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2797
+Deslocamento do Centroide: 424.20 metros
+Época [24/30] -> Perda Treino: 0.7152 | Perda Teste: 500.9222
+
+
+F1-Score (Pixel): 0.1041
+MCC (Pixel): -0.0003
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2898
+Deslocamento do Centroide: 414.43 metros
+Época [25/30] -> Perda Treino: 0.7087 | Perda Teste: 62.4243
+
+
+F1-Score (Pixel): 0.0648
+MCC (Pixel): -0.0019
+Razão de Segmentos (NSR): 8163265.4988
+Precisão de Borda (Tolerância 20m): 0.2775
+Deslocamento do Centroide: 635.30 metros
+Época [26/30] -> Perda Treino: 0.7041 | Perda Teste: 107.4789
+
+
+F1-Score (Pixel): 0.0769
+MCC (Pixel): -0.0007
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2748
+Deslocamento do Centroide: 459.61 metros
+Época [27/30] -> Perda Treino: 0.7154 | Perda Teste: 565.1068
+
+
+F1-Score (Pixel): 0.0537
+MCC (Pixel): -0.0009
+Razão de Segmentos (NSR): 61224491.2890
+Precisão de Borda (Tolerância 20m): 0.2657
+Deslocamento do Centroide: 645.99 metros
+Época [28/30] -> Perda Treino: 0.7085 | Perda Teste: 376.2028
+
+
+F1-Score (Pixel): 0.0879
+MCC (Pixel): -0.0005
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2832
+Deslocamento do Centroide: 414.31 metros
+Época [29/30] -> Perda Treino: 0.6954 | Perda Teste: 352.2902
+
+
+F1-Score (Pixel): 0.0658
+MCC (Pixel): -0.0016
+Razão de Segmentos (NSR): 69387756.7403
+Precisão de Borda (Tolerância 20m): 0.2771
+Deslocamento do Centroide: 631.48 metros
+Época [30/30] -> Perda Treino: 0.6869 | Perda Teste: 89.8653
+
+
