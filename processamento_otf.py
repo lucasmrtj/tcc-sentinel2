@@ -9,7 +9,34 @@ import xarray as xr
 import json
 from arq_unet import UNet
 from avalicao import calcular_metricas_pixel, calcular_metricas_objeto_e_borda, calcular_fidelidade_geometrica
+import cv2
 
+
+def aplicar_filtros_lote(batch_pred_bin, tamanho_kernel=5):
+    """
+    Recebe um lote (batch) de predições do PyTorch, converte para NumPy, 
+    aplica Fechamento e Abertura via OpenCV imagem por imagem, e devolve como Tensor.
+    """
+    # Move para CPU e converte para numpy (Shape: [Batch, Altura, Largura])
+    batch_np = batch_pred_bin.squeeze(1).cpu().numpy().astype(np.uint8)
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (tamanho_kernel, tamanho_kernel))
+    
+    batch_limpo = []
+    for i in range(batch_np.shape[0]):
+        masc = batch_np[i]
+        
+        # 1. FECHAMENTO (Une talhões fragmentados e tapa buracos internos)
+        masc_limpa = cv2.morphologyEx(masc, cv2.MORPH_CLOSE, kernel)
+        
+        # 2. ABERTURA (Apaga poeira/ruído isolado no fundo da imagem)
+        masc_limpa = cv2.morphologyEx(masc_limpa, cv2.MORPH_OPEN, kernel)
+        
+        batch_limpo.append(masc_limpa)
+        
+    # Empilha tudo de volta, recoloca a dimensão de canal e manda pro Device (GPU/CPU)
+    tensor_limpo = torch.from_numpy(np.stack(batch_limpo)).unsqueeze(1).to(batch_pred_bin.device)
+    
+    return tensor_limpo.int()
 
 # 1. Função para encontrar os pares de imagem e máscara
 def encontrar_pares(imagens_dir, mascs_dir):
@@ -207,22 +234,24 @@ for epoch in range(NUM_EPOCHS):
             predicoes = modelo(batch_img)
             
             pred_binaria = (torch.sigmoid(predicoes) > 0.5).int()
+
+            pred_binaria_limpa = aplicar_filtros_lote(pred_binaria, tamanho_kernel=5)
             mask_binaria = batch_mask.int()
             
             # 1. Calcula métricas por pixel (verifique se as chaves batem com a sua função)
-            m_pixel = calcular_metricas_pixel(pred_binaria, mask_binaria)
+            m_pixel = calcular_metricas_pixel(pred_binaria_limpa, mask_binaria)
             metricas_acumuladas["f1_pixel"].append(m_pixel["f1_pixel"])
             metricas_acumuladas["iou_pixel"].append(m_pixel["iou_pixel"])
             metricas_acumuladas["mcc_pixel"].append(m_pixel["mcc_pixel"])
             
             # 2. Calcula métricas por objeto/borda de 20m
-            m_obj = calcular_metricas_objeto_e_borda(pred_binaria, mask_binaria)
+            m_obj = calcular_metricas_objeto_e_borda(pred_binaria_limpa, mask_binaria)
             metricas_acumuladas["nsr_objeto"].append(m_obj["nsr_objeto"])
             metricas_acumuladas["precisao_borda_20m"].append(m_obj["precisao_borda_20m"])
             metricas_acumuladas["revocacao_borda_20m"].append(m_obj["revocacao_borda_20m"])
             
             # 3. Calcula fidelidade geométrica (executada por amostra representativa)
-            m_geom = calcular_fidelidade_geometrica(pred_binaria[0], mask_binaria[0])
+            m_geom = calcular_fidelidade_geometrica(pred_binaria_limpa[0], mask_binaria[0])
             if m_geom["distancia_centroide_metros"] != -1.0: # ignora se não houver talhão detectado
                 metricas_acumuladas["distancia_centroide_metros"].append(m_geom["distancia_centroide_metros"])
                 metricas_acumuladas["distorcao_forma_npi"].append(m_geom["distorcao_forma_npi"])
@@ -268,7 +297,7 @@ for epoch in range(NUM_EPOCHS):
     # --- AJUSTE: Checkpoint inteligente para salvar o melhor modelo ---
     if perda_media_teste < melhor_loss_teste:
         melhor_loss_teste = perda_media_teste
-        torch.save(modelo.state_dict(), "melhor_model_tcc_dropout_scheduler.pt")
+        torch.save(modelo.state_dict(), "melhor_model_tcc_dropout_scheduler_pos.pt")
         print("   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!\n")
     else:
         print("\n")
