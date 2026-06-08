@@ -166,15 +166,14 @@ modelo = UNet(in_channels=42, out_channels=1).to(device)
 pesos_positivos = torch.tensor([5.0]).to(device)
 funcao_perda = nn.BCEWithLogitsLoss(pos_weight=pesos_positivos)
 
-NUM_EPOCHS = 30
+NUM_EPOCHS = 80
 BATCH_SIZE = 32
-LEARNING_RATE = 1e-4
+LEARNING_RATE = 2e-4
 
 # Otimizador Adam (taxa de aprendizado padrão de 1e-4 para segmentação é um bom início)
 otimizador = torch.optim.AdamW(modelo.parameters(), lr=LEARNING_RATE, weight_decay=1e-2)
-
 # NOVO: Reduz o LR pela metade se a loss de teste não melhorar por 3 épocas seguidas
-scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(otimizador, mode='min', factor=0.5, patience=3)
+scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(otimizador, mode='min', factor=0.5, patience=7)
 # Dicionário para guardar as métricas que vão para os gráficos do TCC
 historico = {
     "loss_treino": [], 
