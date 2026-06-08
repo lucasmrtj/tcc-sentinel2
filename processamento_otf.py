@@ -281,7 +281,7 @@ for epoch in range(NUM_EPOCHS):
         historico["distorcao_forma_npi"].append(dist_forma)
         
         # --- NOVO: SALVA O HISTÓRICO EM ARQUIVO EM CADA ÉPOCA ---
-        with open("historico_treino_tcc_dropout_scheduler_pos.json", "w") as f:
+        with open("historico_treino_tcc_dropout_scheduler_pos_80.json", "w") as f:
             json.dump(historico, f, indent=4)
         # Tira a média aritmética de tudo para exibir no print da época
         print(f"F1-Score (Pixel): {historico['f1_pixel'][-1]:.4f}")
@@ -296,7 +296,7 @@ for epoch in range(NUM_EPOCHS):
     # --- AJUSTE: Checkpoint inteligente para salvar o melhor modelo ---
     if perda_media_teste < melhor_loss_teste:
         melhor_loss_teste = perda_media_teste
-        torch.save(modelo.state_dict(), "melhor_model_tcc_dropout_scheduler_pos.pt")
+        torch.save(modelo.state_dict(), "melhor_model_tcc_dropout_scheduler_pos_80.pt")
         print("   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!\n")
     else:
         print("\n")
