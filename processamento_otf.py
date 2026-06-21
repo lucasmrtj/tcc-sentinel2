@@ -12,7 +12,7 @@ from avalicao import calcular_metricas_pixel, calcular_metricas_objeto_e_borda, 
 import cv2
 
 
-def aplicar_filtros_lote(batch_pred_bin, tamanho_kernel=5):
+def aplicar_filtros_lote(batch_pred_bin, tamanho_kernel=3):
     """
     Recebe um lote (batch) de predições do PyTorch, converte para NumPy, 
     aplica Fechamento e Abertura via OpenCV imagem por imagem, e devolve como Tensor.
@@ -165,6 +165,15 @@ modelo = UNet(in_channels=42, out_channels=1).to(device)
 # Função de Perda (Binary Cross Entropy com Logits)
 pesos_positivos = torch.tensor([5.0]).to(device)
 funcao_perda = nn.BCEWithLogitsLoss(pos_weight=pesos_positivos)
+funcao_perda_bce = nn.BCEWithLogitsLoss()
+
+def dice_loss_func(pred, target, smooth=1e-5):
+    """ Penaliza se a rede não desenhar um polígono contínuo """
+    pred_sigmoid = torch.sigmoid(pred)
+    intersection = (pred_sigmoid * target).sum(dim=(2,3))
+    union = pred_sigmoid.sum(dim=(2,3)) + target.sum(dim=(2,3))
+    dice = (2. * intersection + smooth) / (union + smooth)
+    return 1.0 - dice.mean()
 
 NUM_EPOCHS = 80
 BATCH_SIZE = 32
@@ -181,11 +190,11 @@ historico = {
     "f1_pixel": [], 
     "iou_pixel": [], 
     "mcc_pixel": [],
-    "nsr_objeto": [],                # <--- Nova métrica salva
-    "precisao_borda_20m": [],        # <--- Nova métrica salva
-    "revocacao_borda_20m": [],       # <--- Nova métrica salva
+    "nsr_objeto": [],                 # <--- Nova métrica salva
+    "precisao_borda_20m": [],         # <--- Nova métrica salva
+    "revocacao_borda_20m": [],        # <--- Nova métrica salva
     "distancia_centroide_metros": [], # <--- Nova métrica salva
-    "distorcao_forma_npi": []        # <--- Nova métrica salva
+    "distorcao_forma_npi": []         # <--- Nova métrica salva
 }
 melhor_loss_teste = float("inf")
 
@@ -203,7 +212,7 @@ for epoch in range(NUM_EPOCHS):
         
         otimizador.zero_grad()
         predicoes = modelo(batch_img)
-        perda = funcao_perda(predicoes, batch_mask)
+        perda = funcao_perda_bce(predicoes, batch_mask) + dice_loss_func(predicoes, batch_mask)
         perda.backward()
         otimizador.step()
         
@@ -234,7 +243,7 @@ for epoch in range(NUM_EPOCHS):
             
             pred_binaria = (torch.sigmoid(predicoes) > 0.5).int()
 
-            pred_binaria_limpa = aplicar_filtros_lote(pred_binaria, tamanho_kernel=5)
+            pred_binaria_limpa = aplicar_filtros_lote(pred_binaria, tamanho_kernel=3)
             mask_binaria = batch_mask.int()
             
             # 1. Calcula métricas por pixel (verifique se as chaves batem com a sua função)
@@ -255,7 +264,7 @@ for epoch in range(NUM_EPOCHS):
                 metricas_acumuladas["distancia_centroide_metros"].append(m_geom["distancia_centroide_metros"])
                 metricas_acumuladas["distorcao_forma_npi"].append(m_geom["distorcao_forma_npi"])
 
-            perda = funcao_perda(predicoes, batch_mask)
+            perda = funcao_perda_bce(predicoes, batch_mask) + dice_loss_func(predicoes, batch_mask)
             perda_teste_total += perda.item()
             lotes_teste += 1
             
@@ -281,7 +290,7 @@ for epoch in range(NUM_EPOCHS):
         historico["distorcao_forma_npi"].append(dist_forma)
         
         # --- NOVO: SALVA O HISTÓRICO EM ARQUIVO EM CADA ÉPOCA ---
-        with open("historico_treino_tcc_dropout_scheduler_pos_80.json", "w") as f:
+        with open("historico_treino_tcc_dropout_scheduler_pos_80_perda.json", "w") as f:
             json.dump(historico, f, indent=4)
         # Tira a média aritmética de tudo para exibir no print da época
         print(f"F1-Score (Pixel): {historico['f1_pixel'][-1]:.4f}")
@@ -296,7 +305,7 @@ for epoch in range(NUM_EPOCHS):
     # --- AJUSTE: Checkpoint inteligente para salvar o melhor modelo ---
     if perda_media_teste < melhor_loss_teste:
         melhor_loss_teste = perda_media_teste
-        torch.save(modelo.state_dict(), "melhor_model_tcc_dropout_scheduler_pos_80.pt")
+        torch.save(modelo.state_dict(), "melhor_model_tcc_dropout_scheduler_pos_80_perda.pt")
         print("   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!\n")
     else:
         print("\n")
