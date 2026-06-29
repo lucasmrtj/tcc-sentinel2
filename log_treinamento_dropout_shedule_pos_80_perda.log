@@ -1,0 +1,790 @@
+nohup: ignoring input
+Passando os dados pela U-Net...
+
+--- Validação de Formatos ---
+Input vindo do gerador:  torch.Size([8, 7, 6, 256, 256])
+Output gerado pela rede: torch.Size([8, 1, 256, 256])
+Formato esperado da Máscara: torch.Size([8, 1, 256, 256])
+Total de imagens encontradas: 7830
+Quantidade para Treino (80%): 6264
+Quantidade para Teste  (20%): 1566
+Testando o gerador puramente funcional...
+Treinamento rodará no dispositivo: cuda
+Treino: 6264 | Teste: 1566 | Rodando em: cuda
+
+   > Taxa de Aprendizagem Atual: 0.000200
+F1-Score (Pixel): 0.0001
+MCC (Pixel): -0.0001
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2122
+Deslocamento do Centroide: 1753.17 metros
+Época [1/80] -> Perda Treino: 1.2593 | Perda Teste: 15.0714
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+   > Taxa de Aprendizagem Atual: 0.000200
+F1-Score (Pixel): 0.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [2/80] -> Perda Treino: 1.0212 | Perda Teste: 10.6369
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+   > Taxa de Aprendizagem Atual: 0.000200
+F1-Score (Pixel): 0.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [3/80] -> Perda Treino: 1.0010 | Perda Teste: 3.8254
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+   > Taxa de Aprendizagem Atual: 0.000200
+F1-Score (Pixel): 0.0215
+MCC (Pixel): -0.0013
+Razão de Segmentos (NSR): 8163265.5056
+Precisão de Borda (Tolerância 20m): 0.2902
+Deslocamento do Centroide: 1271.18 metros
+Época [4/80] -> Perda Treino: 1.0001 | Perda Teste: 1.3318
+   [SALVO] Nova melhor perda em teste encontrada. Pesos atualizados!
+
+   > Taxa de Aprendizagem Atual: 0.000200
+F1-Score (Pixel): 0.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [5/80] -> Perda Treino: 0.9683 | Perda Teste: 12.3017
+
+
+   > Taxa de Aprendizagem Atual: 0.000200
+F1-Score (Pixel): 0.0007
+MCC (Pixel): 0.0001
+Razão de Segmentos (NSR): 12244898.2482
+Precisão de Borda (Tolerância 20m): 0.2372
+Deslocamento do Centroide: 1105.17 metros
+Época [6/80] -> Perda Treino: 0.9515 | Perda Teste: 83.8439
+
+
+   > Taxa de Aprendizagem Atual: 0.000200
+F1-Score (Pixel): 0.5514
+MCC (Pixel): 0.0020
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2794
+Deslocamento do Centroide: 410.55 metros
+Época [7/80] -> Perda Treino: 0.9385 | Perda Teste: 2.7108
+
+
+   > Taxa de Aprendizagem Atual: 0.000200
+F1-Score (Pixel): 0.5493
+MCC (Pixel): 0.0008
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2856
+Deslocamento do Centroide: 409.15 metros
+Época [8/80] -> Perda Treino: 0.9326 | Perda Teste: 5.9149
+
+
+   > Taxa de Aprendizagem Atual: 0.000200
+F1-Score (Pixel): 0.5465
+MCC (Pixel): 0.0010
+Razão de Segmentos (NSR): 8163265.4988
+Precisão de Borda (Tolerância 20m): 0.2922
+Deslocamento do Centroide: 409.13 metros
+Época [9/80] -> Perda Treino: 0.9556 | Perda Teste: 14.9076
+
+
+   > Taxa de Aprendizagem Atual: 0.000200
+F1-Score (Pixel): 0.5535
+MCC (Pixel): 0.0001
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2718
+Deslocamento do Centroide: 409.88 metros
+Época [10/80] -> Perda Treino: 0.9336 | Perda Teste: 16.0049
+
+
+   > Taxa de Aprendizagem Atual: 0.000200
+F1-Score (Pixel): 0.5537
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 409.89 metros
+Época [11/80] -> Perda Treino: 0.9215 | Perda Teste: 65.0918
+
+
+   > Taxa de Aprendizagem Atual: 0.000100
+F1-Score (Pixel): 0.1095
+MCC (Pixel): -0.0003
+Razão de Segmentos (NSR): 8163265.4988
+Precisão de Borda (Tolerância 20m): 0.2884
+Deslocamento do Centroide: 674.89 metros
+Época [12/80] -> Perda Treino: 0.9048 | Perda Teste: 6.7760
+
+
+   > Taxa de Aprendizagem Atual: 0.000100
+F1-Score (Pixel): 0.0491
+MCC (Pixel): -0.0038
+Razão de Segmentos (NSR): 8163265.4988
+Precisão de Borda (Tolerância 20m): 0.2856
+Deslocamento do Centroide: 1210.72 metros
+Época [13/80] -> Perda Treino: 0.8873 | Perda Teste: 3.9630
+
+
+   > Taxa de Aprendizagem Atual: 0.000100
+F1-Score (Pixel): 0.0221
+MCC (Pixel): -0.0025
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2784
+Deslocamento do Centroide: 1244.61 metros
+Época [14/80] -> Perda Treino: 0.8804 | Perda Teste: 14.2753
+
+
+   > Taxa de Aprendizagem Atual: 0.000100
+F1-Score (Pixel): 0.5512
+MCC (Pixel): -0.0005
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2824
+Deslocamento do Centroide: 408.32 metros
+Época [15/80] -> Perda Treino: 0.8779 | Perda Teste: 2.3615
+
+
+   > Taxa de Aprendizagem Atual: 0.000100
+F1-Score (Pixel): 0.5536
+MCC (Pixel): 0.0003
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2399
+Deslocamento do Centroide: 409.88 metros
+Época [16/80] -> Perda Treino: 0.8891 | Perda Teste: 5.5193
+
+
+   > Taxa de Aprendizagem Atual: 0.000100
+F1-Score (Pixel): 0.1461
+MCC (Pixel): -0.0013
+Razão de Segmentos (NSR): 4081632.7630
+Precisão de Borda (Tolerância 20m): 0.2900
+Deslocamento do Centroide: 575.61 metros
+Época [17/80] -> Perda Treino: 0.8677 | Perda Teste: 2.5193
+
+
+   > Taxa de Aprendizagem Atual: 0.000100
+F1-Score (Pixel): 0.1371
+MCC (Pixel): -0.0014
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2894
+Deslocamento do Centroide: 476.77 metros
+Época [18/80] -> Perda Treino: 0.8611 | Perda Teste: 2.8051
+
+
+   > Taxa de Aprendizagem Atual: 0.000100
+F1-Score (Pixel): 0.0807
+MCC (Pixel): -0.0004
+Razão de Segmentos (NSR): 16326530.9976
+Precisão de Borda (Tolerância 20m): 0.2790
+Deslocamento do Centroide: 482.31 metros
+Época [19/80] -> Perda Treino: 0.8572 | Perda Teste: 8.3833
+
+
+   > Taxa de Aprendizagem Atual: 0.000050
+F1-Score (Pixel): 0.1648
+MCC (Pixel): -0.0025
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2912
+Deslocamento do Centroide: 477.75 metros
+Época [20/80] -> Perda Treino: 0.8588 | Perda Teste: 1.8612
+
+
+   > Taxa de Aprendizagem Atual: 0.000050
+F1-Score (Pixel): 0.2035
+MCC (Pixel): -0.0004
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2924
+Deslocamento do Centroide: 409.59 metros
+Época [21/80] -> Perda Treino: 0.8509 | Perda Teste: 1.7245
+
+
+   > Taxa de Aprendizagem Atual: 0.000050
+F1-Score (Pixel): 0.1460
+MCC (Pixel): -0.0012
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2903
+Deslocamento do Centroide: 578.43 metros
+Época [22/80] -> Perda Treino: 0.8452 | Perda Teste: 2.1809
+
+
+   > Taxa de Aprendizagem Atual: 0.000050
+F1-Score (Pixel): 0.0146
+MCC (Pixel): -0.0007
+Razão de Segmentos (NSR): 8163265.4988
+Precisão de Borda (Tolerância 20m): 0.2597
+Deslocamento do Centroide: 1334.52 metros
+Época [23/80] -> Perda Treino: 0.8441 | Perda Teste: 10.3445
+
+
+   > Taxa de Aprendizagem Atual: 0.000050
+F1-Score (Pixel): 0.0879
+MCC (Pixel): -0.0017
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2913
+Deslocamento do Centroide: 597.41 metros
+Época [24/80] -> Perda Treino: 0.8392 | Perda Teste: 5.8090
+
+
+   > Taxa de Aprendizagem Atual: 0.000050
+F1-Score (Pixel): 0.0288
+MCC (Pixel): -0.0009
+Razão de Segmentos (NSR): 12244898.2482
+Precisão de Borda (Tolerância 20m): 0.2885
+Deslocamento do Centroide: 1312.13 metros
+Época [25/80] -> Perda Treino: 0.8385 | Perda Teste: 4.6439
+
+
+   > Taxa de Aprendizagem Atual: 0.000050
+F1-Score (Pixel): 0.5512
+MCC (Pixel): 0.0004
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2818
+Deslocamento do Centroide: 409.88 metros
+Época [26/80] -> Perda Treino: 0.8416 | Perda Teste: 2.6909
+
+
+   > Taxa de Aprendizagem Atual: 0.000050
+F1-Score (Pixel): 0.0156
+MCC (Pixel): 0.0009
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2625
+Deslocamento do Centroide: 1292.87 metros
+Época [27/80] -> Perda Treino: 0.8295 | Perda Teste: 6.0391
+
+
+   > Taxa de Aprendizagem Atual: 0.000025
+F1-Score (Pixel): 0.1464
+MCC (Pixel): -0.0016
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2839
+Deslocamento do Centroide: 569.60 metros
+Época [28/80] -> Perda Treino: 0.8235 | Perda Teste: 8.6388
+
+
+   > Taxa de Aprendizagem Atual: 0.000025
+F1-Score (Pixel): 0.0297
+MCC (Pixel): 0.0016
+Razão de Segmentos (NSR): 8163265.4988
+Precisão de Borda (Tolerância 20m): 0.2936
+Deslocamento do Centroide: 1284.96 metros
+Época [29/80] -> Perda Treino: 0.8105 | Perda Teste: 4.0224
+
+
+   > Taxa de Aprendizagem Atual: 0.000025
+F1-Score (Pixel): 0.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [30/80] -> Perda Treino: 0.8041 | Perda Teste: 23.6761
+
+
+   > Taxa de Aprendizagem Atual: 0.000025
+F1-Score (Pixel): 0.5041
+MCC (Pixel): 0.0021
+Razão de Segmentos (NSR): 40816327.6394
+Precisão de Borda (Tolerância 20m): 0.2909
+Deslocamento do Centroide: 408.85 metros
+Época [31/80] -> Perda Treino: 0.8012 | Perda Teste: 1.6314
+
+
+   > Taxa de Aprendizagem Atual: 0.000025
+F1-Score (Pixel): 0.0347
+MCC (Pixel): 0.0011
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2947
+Deslocamento do Centroide: 1283.25 metros
+Época [32/80] -> Perda Treino: 0.7957 | Perda Teste: 2.5328
+
+
+   > Taxa de Aprendizagem Atual: 0.000025
+F1-Score (Pixel): 0.0560
+MCC (Pixel): 0.0023
+Razão de Segmentos (NSR): 8163265.5226
+Precisão de Borda (Tolerância 20m): 0.2881
+Deslocamento do Centroide: 1013.42 metros
+Época [33/80] -> Perda Treino: 0.7945 | Perda Teste: 2.3529
+
+
+   > Taxa de Aprendizagem Atual: 0.000025
+F1-Score (Pixel): 0.5535
+MCC (Pixel): -0.0002
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2725
+Deslocamento do Centroide: 409.99 metros
+Época [34/80] -> Perda Treino: 0.7903 | Perda Teste: 11.3926
+
+
+   > Taxa de Aprendizagem Atual: 0.000025
+F1-Score (Pixel): 0.4181
+MCC (Pixel): 0.0004
+Razão de Segmentos (NSR): 61224491.2207
+Precisão de Borda (Tolerância 20m): 0.2926
+Deslocamento do Centroide: 415.54 metros
+Época [35/80] -> Perda Treino: 0.7864 | Perda Teste: 1.5555
+
+
+   > Taxa de Aprendizagem Atual: 0.000013
+F1-Score (Pixel): 0.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [36/80] -> Perda Treino: 0.7832 | Perda Teste: 38.0631
+
+
+   > Taxa de Aprendizagem Atual: 0.000013
+F1-Score (Pixel): 0.4548
+MCC (Pixel): 0.0012
+Razão de Segmentos (NSR): 20408163.7470
+Precisão de Borda (Tolerância 20m): 0.2903
+Deslocamento do Centroide: 460.94 metros
+Época [37/80] -> Perda Treino: 0.7756 | Perda Teste: 3.9237
+
+
+   > Taxa de Aprendizagem Atual: 0.000013
+F1-Score (Pixel): 0.4914
+MCC (Pixel): 0.0003
+Razão de Segmentos (NSR): 18367347.3665
+Precisão de Borda (Tolerância 20m): 0.2925
+Deslocamento do Centroide: 440.28 metros
+Época [38/80] -> Perda Treino: 0.7745 | Perda Teste: 8.1474
+
+
+   > Taxa de Aprendizagem Atual: 0.000013
+F1-Score (Pixel): 0.0177
+MCC (Pixel): 0.0010
+Razão de Segmentos (NSR): 4081632.7648
+Precisão de Borda (Tolerância 20m): 0.2824
+Deslocamento do Centroide: 1306.16 metros
+Época [39/80] -> Perda Treino: 0.7728 | Perda Teste: 2.8069
+
+
+   > Taxa de Aprendizagem Atual: 0.000013
+F1-Score (Pixel): 0.0505
+MCC (Pixel): -0.0015
+Razão de Segmentos (NSR): 30612246.3188
+Precisão de Borda (Tolerância 20m): 0.2813
+Deslocamento do Centroide: 949.59 metros
+Época [40/80] -> Perda Treino: 0.7711 | Perda Teste: 2.0996
+
+
+   > Taxa de Aprendizagem Atual: 0.000013
+F1-Score (Pixel): 0.5447
+MCC (Pixel): -0.0073
+Razão de Segmentos (NSR): 6122449.2283
+Precisão de Borda (Tolerância 20m): 0.2882
+Deslocamento do Centroide: 411.65 metros
+Época [41/80] -> Perda Treino: 0.7686 | Perda Teste: 3.7773
+
+
+   > Taxa de Aprendizagem Atual: 0.000013
+F1-Score (Pixel): 0.0551
+MCC (Pixel): 0.0023
+Razão de Segmentos (NSR): 12244898.2482
+Precisão de Borda (Tolerância 20m): 0.2822
+Deslocamento do Centroide: 1010.90 metros
+Época [42/80] -> Perda Treino: 0.7657 | Perda Teste: 3.8995
+
+
+   > Taxa de Aprendizagem Atual: 0.000013
+F1-Score (Pixel): 0.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [43/80] -> Perda Treino: 0.7626 | Perda Teste: 3.2843
+
+
+   > Taxa de Aprendizagem Atual: 0.000006
+F1-Score (Pixel): 0.0221
+MCC (Pixel): 0.0012
+Razão de Segmentos (NSR): 20408163.8454
+Precisão de Borda (Tolerância 20m): 0.2872
+Deslocamento do Centroide: 1228.68 metros
+Época [44/80] -> Perda Treino: 0.7650 | Perda Teste: 2.1027
+
+
+   > Taxa de Aprendizagem Atual: 0.000006
+F1-Score (Pixel): 0.0552
+MCC (Pixel): -0.0001
+Razão de Segmentos (NSR): 8163265.4988
+Precisão de Borda (Tolerância 20m): 0.2856
+Deslocamento do Centroide: 932.68 metros
+Época [45/80] -> Perda Treino: 0.7585 | Perda Teste: 2.6192
+
+
+   > Taxa de Aprendizagem Atual: 0.000006
+F1-Score (Pixel): 0.0348
+MCC (Pixel): 0.0018
+Razão de Segmentos (NSR): 8163265.4988
+Precisão de Borda (Tolerância 20m): 0.2919
+Deslocamento do Centroide: 1281.32 metros
+Época [46/80] -> Perda Treino: 0.7578 | Perda Teste: 2.3405
+
+
+   > Taxa de Aprendizagem Atual: 0.000006
+F1-Score (Pixel): 0.4885
+MCC (Pixel): 0.0070
+Razão de Segmentos (NSR): 8163265.4093
+Precisão de Borda (Tolerância 20m): 0.2914
+Deslocamento do Centroide: 470.33 metros
+Época [47/80] -> Perda Treino: 0.7557 | Perda Teste: 3.2027
+
+
+   > Taxa de Aprendizagem Atual: 0.000006
+F1-Score (Pixel): 0.5535
+MCC (Pixel): -0.0015
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.3127
+Deslocamento do Centroide: 409.89 metros
+Época [48/80] -> Perda Treino: 0.7550 | Perda Teste: 8.1426
+
+
+   > Taxa de Aprendizagem Atual: 0.000006
+F1-Score (Pixel): 0.5327
+MCC (Pixel): 0.0024
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2944
+Deslocamento do Centroide: 431.76 metros
+Época [49/80] -> Perda Treino: 0.7550 | Perda Teste: 13.1506
+
+
+   > Taxa de Aprendizagem Atual: 0.000006
+F1-Score (Pixel): 0.5140
+MCC (Pixel): 0.0018
+Razão de Segmentos (NSR): 44897960.2407
+Precisão de Borda (Tolerância 20m): 0.2928
+Deslocamento do Centroide: 429.17 metros
+Época [50/80] -> Perda Treino: 0.7543 | Perda Teste: 12.2557
+
+
+   > Taxa de Aprendizagem Atual: 0.000006
+F1-Score (Pixel): 0.0222
+MCC (Pixel): 0.0013
+Razão de Segmentos (NSR): 8163265.6024
+Precisão de Borda (Tolerância 20m): 0.2884
+Deslocamento do Centroide: 1262.16 metros
+Época [51/80] -> Perda Treino: 0.7525 | Perda Teste: 2.5621
+
+
+   > Taxa de Aprendizagem Atual: 0.000003
+F1-Score (Pixel): 0.5531
+MCC (Pixel): 0.0051
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2993
+Deslocamento do Centroide: 409.86 metros
+Época [52/80] -> Perda Treino: 0.7534 | Perda Teste: 6.2000
+
+
+   > Taxa de Aprendizagem Atual: 0.000003
+F1-Score (Pixel): 0.0155
+MCC (Pixel): -0.0016
+Razão de Segmentos (NSR): 118367349.7566
+Precisão de Borda (Tolerância 20m): 0.2539
+Deslocamento do Centroide: 456.52 metros
+Época [53/80] -> Perda Treino: 0.7515 | Perda Teste: 5.3965
+
+
+   > Taxa de Aprendizagem Atual: 0.000003
+F1-Score (Pixel): 0.4175
+MCC (Pixel): 0.0002
+Razão de Segmentos (NSR): 4081632.7515
+Precisão de Borda (Tolerância 20m): 0.2918
+Deslocamento do Centroide: 455.31 metros
+Época [54/80] -> Perda Treino: 0.7481 | Perda Teste: 6.0502
+
+
+   > Taxa de Aprendizagem Atual: 0.000003
+F1-Score (Pixel): 0.0000
+MCC (Pixel): -0.0016
+Razão de Segmentos (NSR): 0.0136
+Precisão de Borda (Tolerância 20m): 0.0028
+Deslocamento do Centroide: 2400.45 metros
+Época [55/80] -> Perda Treino: 0.7479 | Perda Teste: 4.0138
+
+
+   > Taxa de Aprendizagem Atual: 0.000003
+F1-Score (Pixel): 0.4242
+MCC (Pixel): 0.0011
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2926
+Deslocamento do Centroide: 446.49 metros
+Época [56/80] -> Perda Treino: 0.7483 | Perda Teste: 7.4013
+
+
+   > Taxa de Aprendizagem Atual: 0.000003
+F1-Score (Pixel): 0.4609
+MCC (Pixel): 0.0006
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2924
+Deslocamento do Centroide: 436.90 metros
+Época [57/80] -> Perda Treino: 0.7479 | Perda Teste: 10.5688
+
+
+   > Taxa de Aprendizagem Atual: 0.000003
+F1-Score (Pixel): 0.0212
+MCC (Pixel): 0.0016
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2892
+Deslocamento do Centroide: 1273.75 metros
+Época [58/80] -> Perda Treino: 0.7486 | Perda Teste: 2.5534
+
+
+   > Taxa de Aprendizagem Atual: 0.000003
+F1-Score (Pixel): 0.4701
+MCC (Pixel): 0.0371
+Razão de Segmentos (NSR): 71428572.2707
+Precisão de Borda (Tolerância 20m): 0.2942
+Deslocamento do Centroide: 435.18 metros
+Época [59/80] -> Perda Treino: 0.7499 | Perda Teste: 2.2580
+
+
+   > Taxa de Aprendizagem Atual: 0.000002
+F1-Score (Pixel): 0.3593
+MCC (Pixel): 0.0002
+Razão de Segmentos (NSR): 65306124.0264
+Precisão de Borda (Tolerância 20m): 0.2924
+Deslocamento do Centroide: 466.21 metros
+Época [60/80] -> Perda Treino: 0.7464 | Perda Teste: 8.3151
+
+
+   > Taxa de Aprendizagem Atual: 0.000002
+F1-Score (Pixel): 0.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [61/80] -> Perda Treino: 0.7439 | Perda Teste: 6.4151
+
+
+   > Taxa de Aprendizagem Atual: 0.000002
+F1-Score (Pixel): 0.0000
+MCC (Pixel): -0.0019
+Razão de Segmentos (NSR): 0.0136
+Precisão de Borda (Tolerância 20m): 0.0003
+Deslocamento do Centroide: 2400.45 metros
+Época [62/80] -> Perda Treino: 0.7432 | Perda Teste: 2.9053
+
+
+   > Taxa de Aprendizagem Atual: 0.000002
+F1-Score (Pixel): 0.4564
+MCC (Pixel): -0.0014
+Razão de Segmentos (NSR): 73469389.0254
+Precisão de Borda (Tolerância 20m): 0.2918
+Deslocamento do Centroide: 433.95 metros
+Época [63/80] -> Perda Treino: 0.7447 | Perda Teste: 5.0800
+
+
+   > Taxa de Aprendizagem Atual: 0.000002
+F1-Score (Pixel): 0.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [64/80] -> Perda Treino: 0.7454 | Perda Teste: 7.9022
+
+
+   > Taxa de Aprendizagem Atual: 0.000002
+F1-Score (Pixel): 0.4331
+MCC (Pixel): -0.0049
+Razão de Segmentos (NSR): 4081632.7902
+Precisão de Borda (Tolerância 20m): 0.2903
+Deslocamento do Centroide: 440.82 metros
+Época [65/80] -> Perda Treino: 0.7437 | Perda Teste: 10.4662
+
+
+   > Taxa de Aprendizagem Atual: 0.000002
+F1-Score (Pixel): 0.1649
+MCC (Pixel): 0.0495
+Razão de Segmentos (NSR): 65306127.9441
+Precisão de Borda (Tolerância 20m): 0.3422
+Deslocamento do Centroide: 503.11 metros
+Época [66/80] -> Perda Treino: 0.7441 | Perda Teste: 2.5733
+
+
+   > Taxa de Aprendizagem Atual: 0.000002
+F1-Score (Pixel): 0.0000
+MCC (Pixel): -0.0007
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [67/80] -> Perda Treino: 0.7419 | Perda Teste: 3.2074
+
+
+   > Taxa de Aprendizagem Atual: 0.000001
+F1-Score (Pixel): 0.5526
+MCC (Pixel): 0.0362
+Razão de Segmentos (NSR): 4081632.8039
+Precisão de Borda (Tolerância 20m): 0.2302
+Deslocamento do Centroide: 404.35 metros
+Época [68/80] -> Perda Treino: 0.7436 | Perda Teste: 2.6234
+
+
+   > Taxa de Aprendizagem Atual: 0.000001
+F1-Score (Pixel): 0.0686
+MCC (Pixel): 0.0957
+Razão de Segmentos (NSR): 2040816.7176
+Precisão de Borda (Tolerância 20m): 0.4227
+Deslocamento do Centroide: 549.99 metros
+Época [69/80] -> Perda Treino: 0.7435 | Perda Teste: 2.5963
+
+
+   > Taxa de Aprendizagem Atual: 0.000001
+F1-Score (Pixel): 0.5359
+MCC (Pixel): -0.0018
+Razão de Segmentos (NSR): 4081632.7494
+Precisão de Borda (Tolerância 20m): 0.2943
+Deslocamento do Centroide: 411.41 metros
+Época [70/80] -> Perda Treino: 0.7434 | Perda Teste: 3.4380
+
+
+   > Taxa de Aprendizagem Atual: 0.000001
+F1-Score (Pixel): 0.0000
+MCC (Pixel): -0.0001
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [71/80] -> Perda Treino: 0.7429 | Perda Teste: 2.4283
+
+
+   > Taxa de Aprendizagem Atual: 0.000001
+F1-Score (Pixel): 0.0000
+MCC (Pixel): -0.0002
+Razão de Segmentos (NSR): 0.0068
+Precisão de Borda (Tolerância 20m): 0.0000
+Deslocamento do Centroide: 2495.51 metros
+Época [72/80] -> Perda Treino: 0.7424 | Perda Teste: 3.1488
+
+
+   > Taxa de Aprendizagem Atual: 0.000001
+F1-Score (Pixel): 0.3091
+MCC (Pixel): -0.0090
+Razão de Segmentos (NSR): 130612247.9809
+Precisão de Borda (Tolerância 20m): 0.2878
+Deslocamento do Centroide: 460.27 metros
+Época [73/80] -> Perda Treino: 0.7426 | Perda Teste: 2.0711
+
+
+   > Taxa de Aprendizagem Atual: 0.000001
+F1-Score (Pixel): 0.5486
+MCC (Pixel): 0.0264
+Razão de Segmentos (NSR): 34693877.9144
+Precisão de Borda (Tolerância 20m): 0.2583
+Deslocamento do Centroide: 402.53 metros
+Época [74/80] -> Perda Treino: 0.7443 | Perda Teste: 2.3195
+
+
+   > Taxa de Aprendizagem Atual: 0.000001
+F1-Score (Pixel): 0.5474
+MCC (Pixel): -0.0104
+Razão de Segmentos (NSR): 4081632.7909
+Precisão de Borda (Tolerância 20m): 0.3455
+Deslocamento do Centroide: 409.11 metros
+Época [75/80] -> Perda Treino: 0.7441 | Perda Teste: 2.3822
+
+
+   > Taxa de Aprendizagem Atual: 0.000000
+F1-Score (Pixel): 0.0000
+MCC (Pixel): 0.0000
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [76/80] -> Perda Treino: 0.7424 | Perda Teste: 3.7514
+
+
+   > Taxa de Aprendizagem Atual: 0.000000
+F1-Score (Pixel): 0.5115
+MCC (Pixel): -0.0315
+Razão de Segmentos (NSR): 4081632.7658
+Precisão de Borda (Tolerância 20m): 0.3040
+Deslocamento do Centroide: 414.85 metros
+Época [77/80] -> Perda Treino: 0.7414 | Perda Teste: 2.6480
+
+
+   > Taxa de Aprendizagem Atual: 0.000000
+F1-Score (Pixel): 0.0000
+MCC (Pixel): -0.0002
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0068
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [78/80] -> Perda Treino: 0.7406 | Perda Teste: 3.8284
+
+
+   > Taxa de Aprendizagem Atual: 0.000000
+F1-Score (Pixel): 0.0000
+MCC (Pixel): -0.0001
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [79/80] -> Perda Treino: 0.7421 | Perda Teste: 2.6000
+
+
+   > Taxa de Aprendizagem Atual: 0.000000
+F1-Score (Pixel): 0.0000
+MCC (Pixel): -0.0005
+Razão de Segmentos (NSR): 0.0000
+Precisão de Borda (Tolerância 20m): 0.0000
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ubuntu/tcc-sentinel2/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Deslocamento do Centroide: nan metros
+Época [80/80] -> Perda Treino: 0.7424 | Perda Teste: 2.3702
+
+
