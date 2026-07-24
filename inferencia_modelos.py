@@ -87,7 +87,7 @@ def executar_inferencia_em_lote():
         return
 
     # Buscar uma amostra de teste (por exemplo, as 10 primeiras imagens para avaliar)
-    imagens_teste = sorted(glob.glob(os.path.join(pasta_dataset_img, '**', '*.nc'), recursive=True))[:10]
+    imagens_teste = sorted(glob.glob(os.path.join(pasta_dataset_img, '**', '*.nc'), recursive=True))[:100]
 
     for caminho_modelo in modelos_pt:
         nome_modelo = Path(caminho_modelo).stem
