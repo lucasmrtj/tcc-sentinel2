@@ -54,12 +54,17 @@ def salvar_mascara_tif(matriz_mascara, caminho_saida, perfil_original):
         dest.write(matriz_mascara.astype(np.float32), 1)
 
 def compor_rgb_falso_cor(matriz_img_bruta):
-    # Cria a imagem "Visível" PNG usando as bandas do Sentinel
     try:
-        rgb = np.stack([matriz_img_bruta[3], matriz_img_bruta[2], matriz_img_bruta[1]], axis=-1)
+        # Pega os canais 3(NIR), 2(RED) e 1(GREEN) do PRIMEIRO MÊS (índice 0)
+        # O shape final do rgb será [256, 256, 3] que o OpenCV adora!
+        rgb = np.stack([matriz_img_bruta[0, 3, :, :], 
+                        matriz_img_bruta[0, 2, :, :], 
+                        matriz_img_bruta[0, 1, :, :]], axis=-1)
+        
         rgb_norm = cv2.normalize(rgb, None, 0, 255, cv2.NORM_MINMAX)
         return rgb_norm.astype(np.uint8)
-    except:
+    except Exception as e:
+        print(f"Aviso ao compor RGB: {e}") # Imprime o erro real se falhar
         return np.zeros((256, 256, 3), dtype=np.uint8)
 
 # =========================================================================
